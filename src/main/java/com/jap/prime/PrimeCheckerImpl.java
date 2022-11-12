@@ -8,12 +8,17 @@ public class PrimeCheckerImpl {
             boolean flag=true;
             for(int i=2;i<=num/2;++i)
             {
-                if(num % 2==0)
-                {
-                    flag=false;
-                    break;
-                }
+               if(num % i==0)
+               {
+                   flag=false;
+                   break;
+               }
             }
+            if(num==0 || num==1)
+            {
+                flag=false;
+            }
+
             return flag;
         };
         return primeChecker.isPrimeNumber(number);
@@ -21,7 +26,7 @@ public class PrimeCheckerImpl {
 
     public static void main(String[] args) {
         PrimeCheckerImpl primeChecker=new PrimeCheckerImpl();
-        boolean result = primeChecker.primeNumberCheck(11);
+        boolean result = primeChecker.primeNumberCheck(1);
         System.out.println("result = " + result);
     }
 
